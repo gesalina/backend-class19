@@ -1,0 +1,106 @@
+<div class="">
+  <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+    <div class="bg-gray-800 p-3">
+            <h2 class="pb-2 text-2xl font-bold tracking-tight text-white">Agregar nuevo producto</h2>
+            
+        <div>
+        <div class="mb-6">
+    <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
+    <input type="text" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Titulo del articulo" required>
+  </div>
+  <div class="mb-6">
+    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+    <input type="text" id="description" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Descripcion del articulo" required>
+  </div>
+  <div class="mb-6">
+    <label for="thumbnail" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Thumbnail</label>
+    <input type="text" id="thumbnail" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Imagen del producto (example.png)" required>
+  </div>
+   <div class="mb-6">
+    <label for="code" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Code</label>
+    <input type="text" id="code" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Codigo de articulo" required>
+  </div>
+   <div class="mb-6">
+    <label for="stock" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Stock</label>
+    <input type="number" id="stock" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Stock disponible" required>
+  </div>
+  <div class="mb-6">
+    <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+    <input type="number" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Precio" required>
+  </div>
+  
+  <button id="addProduct" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agregar</button>
+
+    </div>
+    </div>
+    <h2 class="pb-2 text-2xl font-bold tracking-tight text-gray-900">Lista de productos en tiempo real</h2>
+    
+    <div class="relative overflow-x-auto">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Id
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    thumbnail
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Title
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Description
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Code
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Stock
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Price
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody  id="productBody">
+                {{#each products }}
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                
+                <td class="px-6 py-4">
+                    {{this.id}}
+                </td>
+                <td class="px-6 py-4">
+                    <img class="w-10 h-10 rounded" src="{{this.thumbnail}}" alt="{{this.title}}">
+                </td>
+                <td class="px-6 py-4">
+                    {{this.title}}
+                </td>
+                <td class="px-6 py-4">
+                    {{this.description}}
+                </td>
+                <td class="px-6 py-4">
+                    {{this.code}}
+                </td>
+                <td class="px-6 py-4">
+                    {{this.stock}}
+                </td>
+                <td class="px-6 py-4">
+                    {{this.price}}
+                </td>
+                <td class="px-6 py-4">
+                    <button type="button" id="deleteBtn" value="{{this.id}}" class="buttonsDel focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+  </div>
+</div>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/content/js/index.js"></script>

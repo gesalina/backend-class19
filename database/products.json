@@ -1,0 +1,39 @@
+[
+	{
+		"id": 1,
+		"title": "Notebook Raza Intel Core i7",
+		"description": "Notebook gamer base",
+		"price": 198999,
+		"thumbnail": "/content/img/product.png",
+		"code": "NGB77",
+		"stock": 2
+	},
+	{
+		"id": 3,
+		"title": "Notebook Raza Intel Core i9",
+		"description": "Notebook gamer con componente de ultima generacion",
+		"price": 525230,
+		"thumbnail": "/content/img/product.png",
+		"code": "NTR801",
+		"stock": 2
+	},
+	{
+		"id": 4,
+		"title": "Monitor ELG 45 pulgadas 244Hz",
+		"description": "Monitor 45 pulgadas y 244Hz marca ELG, con conexion HDMI",
+		"price": 120350,
+		"thumbnail": "/content/img/product.png",
+		"code": "MON553",
+		"stock": 6
+	},
+	{
+		"id": 5,
+		"title": "Prueba de articulos",
+		"description": "Solo prueba",
+		"price": "0",
+		"thumbnail": "/content/img/product.png",
+		"code": "PRUEBA01",
+		"status": true,
+		"stock": "0"
+	}
+]
